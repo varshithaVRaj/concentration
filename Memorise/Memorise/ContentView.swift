@@ -10,13 +10,14 @@ import CoreData
 
 struct ContentView: View {
     
+    var emojis: [String] = ["👀", "🎃", "🕷️", "😈", "🐻"]
+    
     var body: some View {
         HStack(content: {
             
-            CardView(isFaceUP: true)
-            CardView()
-            CardView()
-            CardView()
+            ForEach(emojis.indices){ index in
+                CardView(content: "\(emojis[index])")
+            }
             
         })
     }
@@ -31,6 +32,8 @@ struct CardView: View{
   
     @State var isFaceUP: Bool = false
     
+    var content: String
+    
     var body: some View {
         
         ZStack{
@@ -42,7 +45,7 @@ struct CardView: View{
                 base.foregroundColor(.white)
                 base.strokeBorder(lineWidth: 2)
                 
-                Text("👀")
+                Text("\(content)")
                 .font(.largeTitle)
                 
             }else{
