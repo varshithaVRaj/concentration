@@ -10,19 +10,49 @@ import CoreData
 
 struct ContentView: View {
     
-    var emojis: [String] = ["👀", "🎃", "🕷️", "😈", "🐻"]
+    var emojis: [String] = ["👀", "🎃", "🕷️", "😈", "🐻", "☠️", "🥳", "😎", "🤭", "👀", "🎃", "🕷️", "😈", "🐻", "☠️", "🥳", "😎", "🤭"]
+    
+    @State var cardCount: Int = 2
     
     var body: some View {
-        HStack(content: {
-            
-            ForEach(emojis.indices){ index in
-                CardView(content: "\(emojis[index])")
+        ScrollView {
+            cardBody
+            HStack{
+                cardAdder
+                Spacer()
+                cardRemover
             }
-            
-        })
+        }
+        .padding()
     }
     
+    var cardBody: some View {
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))] ){
+    ForEach(0..<cardCount, id: \.self){ index in
+            CardView(content: "\(emojis[index])")
+            .aspectRatio(2/3, contentMode: .fit)}
+        }
+    }
+    
+    var cardAdder: some View{
+        cardCountAdjuster(by: +1, symbol: "plus.app.fill")
+    }
+    
+    var cardRemover: some View {
+        cardCountAdjuster(by: -1, symbol: "minus.square.fill")
+    }
+    
+    func cardCountAdjuster(by offset: Int, symbol: String) -> some View{
+        Button {
+            cardCount +=  offset
+        } label: {
+            Image(systemName: symbol)
+        }
+        .disabled(cardCount + offset > emojis.count || cardCount + offset < 1 )
+    }
+
 }
+
 #Preview {
     ContentView()
 }
@@ -30,30 +60,20 @@ struct ContentView: View {
 
 struct CardView: View{
   
-    @State var isFaceUP: Bool = false
-    
+    @State var isFaceUP: Bool = true
     var content: String
-    
     var body: some View {
         
         ZStack{
-            
-//            let base = RoundedRectangle(cornerRadius: 10)
-            let base = Circle()
-            
-            if isFaceUP{
+            let base = RoundedRectangle(cornerRadius: 12)
+            Group{
                 base.foregroundColor(.white)
                 base.strokeBorder(lineWidth: 2)
-                
                 Text("\(content)")
                 .font(.largeTitle)
-                
-            }else{
-                base.fill()
-                .foregroundColor(.orange)
-                base.strokeBorder(lineWidth: 2)
-                
             }
+            base.fill()
+                .opacity(isFaceUP ? 0 : 1)
         }
         .onTapGesture {
             print("the interface is tapped")
