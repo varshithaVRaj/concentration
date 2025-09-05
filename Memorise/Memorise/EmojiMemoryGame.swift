@@ -19,7 +19,7 @@ class EmojiMemoryGame: ObservableObject {
     @Published private var model = EmojiMemoryGame.createMemoryGame()
     
     private static func createMemoryGame() -> MemoryGame <String> {
-        return MemoryGame(numberOfPairs: 20){ index in
+        return MemoryGame(numberOfPairs: 25){ index in
             if emoji.indices.contains(index) {
                 return emoji[index]
             }else{

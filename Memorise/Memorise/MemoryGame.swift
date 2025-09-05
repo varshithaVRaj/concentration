@@ -100,9 +100,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable{
         var isFaceUP = false
         var isMatched = false
         var content: CardContent // CardContent is Generics here
-        
     }
-    
 }
 
 extension Array{

@@ -4,17 +4,18 @@
 //
 //  Created by Varshitha VRaj on 23/08/25.
 //
+
 import SwiftUI
 struct  EmojiMemoryGameView: View {
     
     @ObservedObject var viewModel: EmojiMemoryGame
     
+    private let aspectRatio: CGFloat = 2/3
+    
     var body: some View {
         VStack{
-            ScrollView {
             cardBody
-            .animation(.default, value: viewModel.cards)
-            }
+                .animation(.default, value: viewModel.cards)
             Button("Shuffle"){
                 viewModel.shuffle()
             }
@@ -22,12 +23,13 @@ struct  EmojiMemoryGameView: View {
         .padding()
     }
     
-    var cardBody: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 85), spacing: 0)], spacing: 0){
-            ForEach(viewModel.cards){ card in
-                VStack(spacing: 0){
+    
+    private var cardBody: some View {
+        AspectVGrid(items: viewModel.cards, aspectRatio: aspectRatio){ card in
+            
+            if card.id.last == "b"{
+                VStack{
                     CardView(card: card)
-                        .aspectRatio(2/3, contentMode: .fit)
                         .padding(4)
                         .onTapGesture {
                             viewModel.choose(card: card)
@@ -35,9 +37,12 @@ struct  EmojiMemoryGameView: View {
                     Text(card.id)
                 }
             }
-            
         }
+        .foregroundColor(Color.orange)
     }
+    
+    
+    
     
 }
 
@@ -48,7 +53,7 @@ struct  EmojiMemoryGameView: View {
 struct CardView: View{
     
     let card: MemoryGame<String>.Card
-  
+    
     init(card: MemoryGame<String>.Card) {
         self.card = card
     }
@@ -60,9 +65,9 @@ struct CardView: View{
                 base.fill(.white)
                 base.strokeBorder(lineWidth: 2)
                 Text(card.content)
-                .font(.largeTitle)
-                .minimumScaleFactor(0.01)
-                .aspectRatio(1, contentMode: .fit)
+                    .font(.largeTitle)
+                    .minimumScaleFactor(0.01)
+                    .aspectRatio(1, contentMode: .fit)
             }
             .opacity(card.isFaceUP ? 1 : 0)
             base.fill()
