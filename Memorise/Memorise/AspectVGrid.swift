@@ -15,7 +15,7 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View{
     @ViewBuilder var content: (Item) -> ItemView
     //MARK: Create a closure which takes the card as item and gives item view . here again item and item view both are generics, that is why we had to conform both to identifiable protocol.
     
-    init(items: [Item], aspectRatio: CGFloat, content: @escaping (Item) -> ItemView) {
+    init(items: [Item], aspectRatio: CGFloat, @ViewBuilder content: @escaping (Item) -> ItemView) {
         self.items = items
         self.aspectRatio = aspectRatio
         self.content = content
@@ -56,6 +56,7 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View{
         print("min is : \(max(size.width / count, size.height * aspectRatio).rounded(.down))")
         
         return max(size.width / count, size.height * aspectRatio).rounded(.down)
+        
     }
     
 }

@@ -22,8 +22,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable{
         }
     }
     
+     
     //MARK: Dont remove this , this says the logic
-    
 //    var indexOfTheOneAndOnlyFaceUpCard: Int? {
 //        
 //        get{
@@ -47,7 +47,6 @@ struct MemoryGame<CardContent> where CardContent: Equatable{
 //                }
 //            }
 //        }
-//        
 //    }
     
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
@@ -97,10 +96,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable{
         }
         
         var id: String
-        var isFaceUP = false
-        var isMatched = false
+        var isFaceUP = true
+        var isMatched = true
         var content: CardContent // CardContent is Generics here
     }
+    
 }
 
 extension Array{
