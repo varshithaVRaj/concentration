@@ -61,7 +61,7 @@
 		84727F5F157C79AE6EBDE67E /* Build Target */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "-c \"${AE76EDB}\"";
-			buildConfigurationList = 4677DB9D2E6B0A5E00E7D81A /* Build configuration list */;
+			buildConfigurationList = 4677DB9D2E6B0A5E00E7D81A /* Build configuration list for PBXLegacyTarget "Build Target" */;
 			buildPhases = (
 			);
 			buildToolPath = /bin/sh;
@@ -360,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4677DB9D2E6B0A5E00E7D81A /* Build configuration list */ = {
+		4677DB9D2E6B0A5E00E7D81A /* Build configuration list for PBXLegacyTarget "Build Target" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4677DB992E6A879F00E7D81A /* Debug */,

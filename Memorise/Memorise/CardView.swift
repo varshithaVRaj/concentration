@@ -17,37 +17,29 @@ struct CardView: View{
     }
     
     var body: some View {
-        ZStack{
-            let base = RoundedRectangle(cornerRadius: Constants.cornerRadius)
-            Group{
-                
-                base.fill(.white)
-                base.strokeBorder(lineWidth: Constants.lineWidth)
-                
-                Pie(endAngle: .degrees(240))
-                    .stroke(lineWidth: 2)
-                    .opacity(Constants.Pie.opacity)
+        
+        Pie(endAngle: .degrees(240))
+            .stroke(lineWidth: 2)
+            .opacity(Constants.Pie.opacity)
+            .overlay(
+//                AnyView(
+                    Text(card.content)
+                        .font(.system(size: Constants.FontSize.largest))
+                        .minimumScaleFactor(Constants.FontSize.scaleFactor)
+                        .multilineTextAlignment(.center)
+                        .aspectRatio(1, contentMode: .fit)
+                        .padding(Constants.inset)
+                        .rotationEffect(.degrees(card.isMatched ? 360 : 0))
+                        .animation(.easeInOut(duration: 1), value: card.isMatched)
+//                )
+            )
 
-                    .overlay{
-                        Text(card.content)
-                            .font(.system(size: Constants.FontSize.largest))
-                            .minimumScaleFactor(Constants.FontSize.scaleFactor )
-                            .multilineTextAlignment(.center)
-                            .aspectRatio(1, contentMode: .fit)
-                            .padding(Constants.inset)
-                    }
-            }
-            .opacity(card.isFaceUP ? 1 : 0)
-            base.fill()
-                .opacity(card.isFaceUP ? 0 : 1)
-        }
-        .opacity(card.isFaceUP || !card.isMatched ? 1 : 0)
+            .padding(Constants.inset)
+            .modifier(Cardify(isFaceUp: card.isFaceUP))
+            .opacity(card.isFaceUP || !card.isMatched ? 1 : 0)
     }
     
-    
     private struct Constants{
-        static let cornerRadius: CGFloat = 12
-        static let lineWidth: CGFloat = 2
         static let inset: CGFloat = 5
         
         struct FontSize{

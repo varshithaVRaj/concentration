@@ -27,7 +27,6 @@ struct Pie: Shape{
         //MARK: the radius is half of either the width or the height
         let radius = min(rect.width, rect.height) / 2
         
-        print("the start angle radians is \(startAngle.radians)")
         
         let start = CGPoint(
             x: center.x + radius * cos(startAngle.radians), //MARK: tells us where to go in a horizontal direction

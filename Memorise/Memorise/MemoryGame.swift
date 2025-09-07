@@ -96,8 +96,8 @@ struct MemoryGame<CardContent> where CardContent: Equatable{
         }
         
         var id: String
-        var isFaceUP = true
-        var isMatched = true
+        var isFaceUP = false
+        var isMatched = false 
         var content: CardContent // CardContent is Generics here
     }
     
